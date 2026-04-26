@@ -1,0 +1,140 @@
+:root {
+  --text: #6b6375;
+  --text-h: #08060d;
+  --bg: #fff;
+  --border: #e5e4e7;
+  --code-bg: #f4f3ec;
+  /* SQB-like palette (dark blue + red) */
+  --sqb-blue: #0b3a7b;
+  --sqb-blue-dark: #082a59;
+  --sqb-red: #e1252a;
+
+  --accent: var(--sqb-blue);
+  --accent-2: var(--sqb-red);
+  --accent-bg: rgba(11, 58, 123, 0.10);
+  --accent-border: rgba(11, 58, 123, 0.45);
+  --danger: var(--sqb-red);
+  --warning: #f59e0b;
+  --brand-gradient: linear-gradient(180deg, var(--sqb-red), var(--sqb-blue));
+  --social-bg: rgba(244, 243, 236, 0.5);
+  --shadow:
+    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+
+  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  font: 15px/145% var(--sans);
+  letter-spacing: 0.18px;
+  color-scheme: light dark;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (max-width: 1024px) {
+    font-size: 14px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #9ca3af;
+    --text-h: #f3f4f6;
+    --bg: #16171d;
+    --border: #2e303a;
+    --code-bg: #1f2028;
+    --sqb-blue: #6aa3ff;
+    --sqb-blue-dark: #2f6ed1;
+    --sqb-red: #ff5c63;
+
+    --accent: var(--sqb-blue);
+    --accent-2: var(--sqb-red);
+    --accent-bg: rgba(106, 163, 255, 0.16);
+    --accent-border: rgba(106, 163, 255, 0.55);
+    --danger: var(--sqb-red);
+    --warning: #fbbf24;
+    --brand-gradient: linear-gradient(180deg, var(--sqb-red), var(--sqb-blue));
+    --social-bg: rgba(47, 48, 58, 0.5);
+    --shadow:
+      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+  }
+
+  #social .button-icon {
+    filter: invert(1) brightness(2);
+  }
+}
+
+#root {
+  height: 100svh;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1,
+h2 {
+  font-family: var(--heading);
+  font-weight: 500;
+  color: var(--text-h);
+}
+
+h1 {
+  font-size: 40px;
+  letter-spacing: -1.68px;
+  margin: 32px 0;
+  @media (max-width: 1024px) {
+    font-size: 28px;
+    margin: 20px 0;
+  }
+}
+h2 {
+  font-size: 24px;
+  line-height: 118%;
+  letter-spacing: -0.24px;
+  margin: 0 0 8px;
+  @media (max-width: 1024px) {
+    font-size: 20px;
+  }
+}
+p {
+  margin: 0;
+}
+
+code {
+  font-family: var(--mono);
+  display: inline-flex;
+  border-radius: 4px;
+  color: var(--text-h);
+}
+
+code {
+  font-size: 15px;
+  line-height: 135%;
+  padding: 4px 8px;
+  background: var(--code-bg);
+}
+
+/* SMS kampaniya sahifasi: Copilotdagi overflow:hidden dan chiqib, butun sahifa scroll bo‘lsin */
+html.app-sms-page,
+body.app-sms-page {
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: auto;
+  min-height: 100svh;
+}
+
+#root.app-sms-page {
+  height: auto;
+  min-height: 100svh;
+  overflow: visible;
+}

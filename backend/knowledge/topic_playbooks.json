@@ -1,0 +1,106 @@
+{
+  "version": "2",
+  "playbooks": [
+    {
+      "match_topics": [
+        "Kartalar",
+        "Karta",
+        "Kredit karta",
+        "Premium karta",
+        "Keshbek karta",
+        "cards",
+        "карта"
+      ],
+      "coach_uz": "Bu chat faqat kartalar mavzusida. Mijoz bir xil qo‘ng‘iroqda turli burchakdan so‘rashi mumkin — har birida faqat tasdiqlangan ma’lumotdan foydalaning va boshqa mahsulotlarga o‘tmang.",
+      "coach_ru": "Этот чат только про карты. Клиент может задать разные вопросы в одном звонке — отвечайте только по подтверждённым фактам и не уходите в другие продукты.",
+      "typical_angles_uz": [
+        "xizmat haqi / yillik to‘lov",
+        "kredit karta limiti va foiz mexanizmi (umumiy, raqamsiz)",
+        "keshbek toifalari va limitlar (tarifdan tekshirish)",
+        "chetda ishlatish, valyuta konversiya, xalqaro to‘lovlar",
+        "limit, PIN, blok, yo‘qolgan karta",
+        "onlayn xavfsizlik va SMS/xabarnoma"
+      ],
+      "typical_angles_ru": [
+        "обслуживание / годовое обслуживание",
+        "кредитная карта: лимит и механизм процентов (общими словами, без выдуманных цифр)",
+        "кэшбэк: категории и лимиты (проверка по тарифу)",
+        "использование за рубежом, конвертация, международные платежи",
+        "лимит, PIN, блокировка, утеря карты",
+        "онлайн-безопасность и уведомления"
+      ]
+    },
+    {
+      "match_topics": ["Kredit", "Mikrokredit", "Avtokredit", "Ipoteka", "qarz", "кредит"],
+      "coach_uz": "Bu chat kredit mahsulotlari haqida. Mijoz foiz, muddat, garov, hujjatlar yoki tasdiqlash haqida alohida savollar berishi mumkin.",
+      "coach_ru": "Этот чат про кредитные продукты. Клиент может спрашивать про ставку, срок, залог, документы или одобрение отдельными вопросами.",
+      "typical_angles_uz": [
+        "maqsad va summa",
+        "muddat va to‘lov rejasi",
+        "garov / kafillik",
+        "hujjatlar va skoring jarayoni"
+      ],
+      "typical_angles_ru": [
+        "цель и сумма",
+        "срок и график платежей",
+        "залог / поручительство",
+        "документы и скоринг"
+      ]
+    },
+    {
+      "match_topics": ["Pul o‘tkazma", "Pul otkazma", "O'tkazma", "SWIFT", "transfer", "перевод"],
+      "coach_uz": "Bu chat pul o‘tkazmalari haqida. Mijoz komissiya, vaqt, valyuta, rekvizitlar yoki SWIFT bo‘yicha alohida savollar berishi mumkin.",
+      "coach_ru": "Этот чат про переводы. Клиент может отдельно спросить про комиссию, срок, валюту, реквизиты или SWIFT.",
+      "typical_angles_uz": [
+        "ichki o‘tkazma va komissiya",
+        "valyuta / konvertatsiya",
+        "SWIFT va korrespondent bank",
+        "muddati va holatini kuzatish"
+      ],
+      "typical_angles_ru": [
+        "внутренний перевод и комиссия",
+        "валюта / конвертация",
+        "SWIFT и корреспондентский банк",
+        "сроки и отслеживание статуса"
+      ]
+    },
+    {
+      "match_topics": ["Valyuta", "valyuta", "currency", "обмен"],
+      "coach_uz": "Bu chat valyuta va konvertatsiya haqida. Mijoz kurs, komissiya yoki qayerdan ayirboshlash mumkinligi haqida so‘rashi mumkin.",
+      "coach_ru": "Этот чат про валюту и конвертацию. Клиент может спросить про курс, комиссию или где обменять.",
+      "typical_angles_uz": ["kurs va spread", "komissiya", "naqd / kartadan", "cheklovlar"],
+      "typical_angles_ru": ["курс и спред", "комиссия", "наличные / с карты", "лимиты"]
+    },
+    {
+      "match_topics": ["Biznes kredit", "biznes", "SME", "aylanma", "предприниматель"],
+      "coach_uz": "Bu chat tadbirkorlik / aylanma krediti mavzusida. Hujjatlar, garov, aylanma va komitet qarori alohida savollar bo‘lishi mumkin.",
+      "coach_ru": "Этот чат про бизнес/оборотный кредит. Документы, залог, оборот и решение комитета могут обсуждаться отдельными вопросами.",
+      "typical_angles_uz": [
+        "garov yoki kafillik",
+        "hisobot va aylanma tasdiqlash",
+        "muddat va to‘lov jadvali",
+        "komissiya va sug‘urta"
+      ],
+      "typical_angles_ru": ["залог или поручительство", "отчётность и оборот", "срок и график", "комиссии и страхование"]
+    },
+    {
+      "match_topics": ["Onlayn bank", "ilova", "SQB Mobile", "mobil", "приложение"],
+      "coach_uz": "Bu chat mobil ilova va onlayn xizmatlar haqida. Parol, blok, OTP, biometriya va xavfsizlik savollari bir qo‘ng‘iroqda ketma-ket chiqishi mumkin.",
+      "coach_ru": "Этот чат про мобильное приложение и онлайн‑сервисы. Пароль, блокировка, OTP, биометрия и безопасность могут идти цепочкой вопросов.",
+      "typical_angles_uz": [
+        "parol tiklash",
+        "kirish bloklangan",
+        "OTP kelmayapti",
+        "karta qo‘shish / limit sozlamalari ilovada"
+      ],
+      "typical_angles_ru": ["восстановление пароля", "блок входа", "не приходит OTP", "добавление карты / лимиты в приложении"]
+    },
+    {
+      "match_topics": ["Depozit", "omonat", "депозит"],
+      "coach_uz": "Bu chat depozit va omonat haqida. Mijoz foiz, muddat, yechib olish yoki kapitalizatsiya haqida alohida savollar berishi mumkin.",
+      "coach_ru": "Этот чат про депозиты. Клиент может отдельно спросить про ставку, срок, снятие или капитализацию.",
+      "typical_angles_uz": ["foiz stavkasi", "muddat", "yechib olish shartlari", "kapitalizatsiya"],
+      "typical_angles_ru": ["ставка", "срок", "условия снятия", "капитализация"]
+    }
+  ]
+}

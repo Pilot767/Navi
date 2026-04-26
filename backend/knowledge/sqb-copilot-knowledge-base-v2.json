@@ -1,0 +1,361 @@
+{
+  "_meta": {
+    "version": "2.0.0",
+    "bank": "SQB — O'zsanoatqurilishbank",
+    "updated": "2025-04-26",
+    "description": "Real-time AI copilot uchun to'liq baza: NBO, objection handling, KYC checklist, compliance guardrails",
+    "latency_target_ms": 2000,
+    "languages": ["uz", "ru"]
+  },
+
+  "qa": [
+    {
+      "id": "qa_001",
+      "category": "iste_mol_kredit",
+      "tags": ["kredit", "iste'mol", "foiz", "arzon", "eng kam", "qancha"],
+      "variants_uz": ["eng arzon kredit", "eng kam foizli kredit", "kredit foizi qancha", "qanday kredit arzon", "kredit stavkasi"],
+      "variants_ru": ["самый дешёвый кредит", "минимальная ставка по кредиту", "кредит процент сколько"],
+      "answer_uz": "Ish haqi loyihasi a'zolari uchun yiliga 26%dan boshlanadi. Rasmiy daromad bo'lsa 27%, o'z-o'zini band qilganlarga 28%. Summa 200 mln so'mgacha, muddat 5 yilgacha.",
+      "answer_ru": "Участникам зарплатного проекта — от 26% годовых, при официальном доходе 27%, самозанятым 28%. Сумма до 200 млн сумов, срок до 5 лет.",
+      "nbo": {
+        "trigger_if": { "no_existing_credit": true },
+        "upsell_product": "kredit_karta",
+        "upsell_uz": "Mijozda debit karta bor — kredit karta taklif qiling, limit darhol belgilanadi.",
+        "upsell_ru": "У клиента есть дебетовая карта — предложите кредитную, лимит устанавливается сразу.",
+        "cross_sell": ["sugurta_paket", "overdraft"]
+      },
+      "source": "sqb.uz/uz/individuals/credits/"
+    },
+    {
+      "id": "qa_002",
+      "category": "iste_mol_kredit",
+      "tags": ["hujjat", "nima kerak", "talab", "zarur", "kredit olish"],
+      "variants_uz": ["kredit uchun nima kerak", "qanday hujjat kerak", "kredit olishga tayyorlanish", "kredit hujjatlari"],
+      "variants_ru": ["документы для кредита", "что нужно для кредита", "какие справки нужны"],
+      "answer_uz": "Pasport yoki ID-karta, daromad ma'lumotnomasi talab qilinadi. 100 mln so'mgacha kafillik yoki sug'urta polisi yetarli, undan yuqori summada mol-mulk garovi kerak.",
+      "answer_ru": "Паспорт или ID-карта, справка о доходах. До 100 млн — поручительство или страховой полис, свыше — залог имущества.",
+      "nbo": {
+        "trigger_if": { "income_confirmed": false },
+        "upsell_uz": "Rasmiy daromadi yo'q bo'lsa, boshlang'ich to'lov 40% bo'lsa kredit mumkin — ipotekada bu qoida bor.",
+        "upsell_ru": "Без официального дохода возможен кредит с первоначальным взносом от 40%.",
+        "cross_sell": []
+      },
+      "source": "sqb.uz/uz/individuals/credits/"
+    },
+    {
+      "id": "qa_003",
+      "category": "ipoteka",
+      "tags": ["ipoteka", "uy", "kvartira", "ko'chmas mulk", "uy-joy", "foiz"],
+      "variants_uz": ["ipoteka foiz stavkasi", "uy sotib olish uchun kredit", "kvartira uchun kredit", "ipoteka shartlari", "yangi uyga kredit"],
+      "variants_ru": ["ипотека ставка", "кредит на квартиру", "жильё кредит условия"],
+      "answer_uz": "Davlat dasturi bo'yicha asosiy stavka + 4% (hozir ~18%), bank mablag'laridan asosiy stavka + 14% (~28%). Toshkentda maksimal 420 mln, viloyatlarda 330 mln so'm. Muddat 20 yilgacha, boshlang'ich to'lov 30%dan.",
+      "answer_ru": "Госпрограмма: ключевая ставка + 4% (~18%), из средств банка ~28%. В Ташкенте до 420 млн, в регионах до 330 млн сумов. Срок до 20 лет, взнос от 30%.",
+      "nbo": {
+        "trigger_if": { "has_debit_card": true, "age_range": [25, 45] },
+        "upsell_uz": "Ipoteka bilan birga uy jihozlari uchun iste'mol krediti ham taklif qiling — bir suhbatda ikki mahsulot.",
+        "upsell_ru": "К ипотеке предложите потребительский кредит на ремонт или мебель — два продукта за один звонок.",
+        "cross_sell": ["iste_mol_kredit", "sugurta_paket"]
+      },
+      "source": "depozit.uz/credits/mortgage/sqb, sqb.uz/uz/individuals/ipoteka/"
+    },
+    {
+      "id": "qa_004",
+      "category": "ipoteka",
+      "tags": ["boshlang'ich to'lov", "avans", "bo'nak", "ipoteka", "necha foiz"],
+      "variants_uz": ["ipoteka boshlang'ich to'lov", "birinchi to'lov qancha", "avans qancha", "ipotekada bo'nak"],
+      "variants_ru": ["первоначальный взнос по ипотеке", "сколько нужно для ипотеки", "аванс по ипотеке"],
+      "answer_uz": "Kamida 30%. Rasmiy daromad tasdiqlanmasa (o'z-o'zini band qilganlar) kamida 40%. Toshkentda 420 mln so'mlik kvartirada boshlang'ich to'lov 126 mln so'mdan kam bo'lmaydi.",
+      "answer_ru": "Минимум 30%. Для самозанятых без подтверждения дохода — от 40%. В Ташкенте при квартире 420 млн: взнос от 126 млн сумов.",
+      "nbo": {
+        "trigger_if": { "segment": "affluent" },
+        "upsell_uz": "Affluent mijoz uchun yuqori boshlang'ich to'lov (40%+) bilan foizni pasaytirish imkonini ko'rsating.",
+        "upsell_ru": "Для Affluent-клиента большой первоначальный взнос (40%+) снижает ставку — акцентируйте это.",
+        "cross_sell": ["sugurta_paket"]
+      },
+      "source": "depozit.uz/credits/mortgage/sqb"
+    },
+    {
+      "id": "qa_005",
+      "category": "avtokredit",
+      "tags": ["avto", "mashina", "avtomobil", "avtokredit", "transport", "foiz"],
+      "variants_uz": ["mashina kredit foiz", "avtokredit shartlari", "avtomobil uchun kredit", "avtokredit olmoqchiman", "mashinaga kredit"],
+      "variants_ru": ["автокредит ставка", "кредит на машину условия", "купить авто в кредит"],
+      "answer_uz": "Ikkilamchi bozor uchun 25%dan, muddat 36 oygacha, boshlang'ich to'lov 25%. SQBning bozordagi o'rtacha stavkasi 23.4% — raqobatbardosh narx. 18–65 yoshdagi O'zbekiston fuqarolari murojaat qilishi mumkin.",
+      "answer_ru": "Вторичный рынок: от 25%, срок до 36 мес., взнос 25%. Средняя ставка СКБ по рынку ~23,4% — конкурентный уровень. Возраст 18–65 лет.",
+      "nbo": {
+        "trigger_if": { "has_salary_project": true },
+        "upsell_uz": "Ish haqi loyihasi a'zosiga kasko sug'urta paket bilan avtokredit — foiz + 0.5% past bo'lishi mumkin.",
+        "upsell_ru": "Участнику зарплатного проекта предложите автокредит с пакетом КАСКО — возможна сниженная ставка.",
+        "cross_sell": ["sugurta_paket"]
+      },
+      "source": "sqb.uz/uz/individuals/ipoteka/ikkilamchi-bozordan-avtokredit-uz/"
+    },
+    {
+      "id": "qa_006",
+      "category": "depozit",
+      "tags": ["depozit", "omonat", "jamg'arma", "foiz", "pul qo'yish", "daromad"],
+      "variants_uz": ["depozit foizi qancha", "omonat foiz stavkasi", "pul qo'ysam qancha foiz", "depozit shartlari", "jamg'arma depozit"],
+      "variants_ru": ["ставка по депозиту", "вклад процент сколько", "выгодный депозит", "положить деньги под процент"],
+      "answer_uz": "So'mda: 6 oyda bank ofisida 17%, mobil ilova orqali 18%; 12 oyda 19–20% gacha. Dollar depoziti 3.5% gacha. Aniq stavka muddat va mahsulotga qarab farqlanadi.",
+      "answer_ru": "В сумах: 6 месяцев — 17% в офисе, 18% через мобильное приложение; 12 месяцев — до 20%. Валютный вклад — до 3,5%. Ставка зависит от срока и продукта.",
+      "nbo": {
+        "trigger_if": { "no_existing_deposit": true, "segment": ["mass", "affluent"] },
+        "upsell_uz": "Mobil ilova orqali ochilsa 1% yuqori foiz — bugun ilovani yuklab olishni tavsiya qiling.",
+        "upsell_ru": "Через мобильное приложение ставка на 1% выше — порекомендуйте сразу скачать приложение.",
+        "cross_sell": ["kredit_karta"]
+      },
+      "source": "depozit.uz/deposits/sqb"
+    },
+    {
+      "id": "qa_007",
+      "category": "biznes_kredit",
+      "tags": ["biznes", "tadbirkor", "kichik biznes", "kredit", "aylanma", "asbob"],
+      "variants_uz": ["biznes kredit shartlari", "tadbirkor kredit", "kichik biznes uchun kredit", "ishlab chiqarish krediti", "biznes qo'llab quvvatlash"],
+      "variants_ru": ["бизнес кредит условия", "кредит для предпринимателя", "малый бизнес кредит"],
+      "answer_uz": "\"BIZNESGA OMAD\" krediti: aylanma mablag'lar uchun 150 mln so'mgacha, asosiy vositalar uchun 1 mlrd so'mgacha, asbob-uskunalar uchun 1.5 mlrd so'mgacha. Ta'minot — ko'chmas mulk yoki avtotransport garovi.",
+      "answer_ru": "Кредит «БИЗНЕСУ УДАЧИ»: оборотные средства до 150 млн, основные средства до 1 млрд, оборудование до 1,5 млрд сумов. Обеспечение — недвижимость или автотранспорт.",
+      "nbo": {
+        "trigger_if": { "client_type": "business", "no_existing_credit": true },
+        "upsell_uz": "Biznes kreditiga qo'shimcha korporativ karta va ish haqi loyihasini birga taklif qiling.",
+        "upsell_ru": "К бизнес-кредиту предложите корпоративную карту и зарплатный проект — комплексное решение.",
+        "cross_sell": ["korporativ_karta", "ish_haqi_loyiha"]
+      },
+      "source": "sqb.uz/uz/business/credit-for-small-business/businessga-omad-uz/"
+    },
+    {
+      "id": "qa_008",
+      "category": "online_xizmat",
+      "tags": ["online", "ariza", "mobil", "internet banking", "raqamli", "bankga bormay"],
+      "variants_uz": ["online ariza topshirsa bo'ladimi", "internet orqali kredit", "mobil ilovada kredit", "bankga bormay", "onlayn xizmat"],
+      "variants_ru": ["онлайн заявка", "кредит через интернет", "мобильное приложение кредит", "без похода в банк"],
+      "answer_uz": "Ha, sqb.uz yoki mobil ilova orqali dastlabki ariza topshiriladi. Kredit shartnomasi imzolash uchun bank ofisiga kelish kerak. Mobil ilovada depozit ochilsa foiz 1% yuqori bo'ladi.",
+      "answer_ru": "Да, предварительная заявка — на sqb.uz или в мобильном приложении. Для подписания договора нужен офис. Депозит через приложение — ставка на 1% выше.",
+      "nbo": {
+        "trigger_if": { "age_range": [18, 40] },
+        "upsell_uz": "Yoshroq mijozlarga mobil ilova orqali xizmatlarni aktiv tavsiya qiling — ularga qulay.",
+        "upsell_ru": "Молодым клиентам активно предлагайте мобильное приложение — им так удобнее.",
+        "cross_sell": ["depozit", "kredit_karta"]
+      },
+      "source": "sqb.uz"
+    },
+    {
+      "id": "qa_009",
+      "category": "yosh_talab",
+      "tags": ["yosh", "necha yosh", "pensioner", "yoshga talab", "kredit olish"],
+      "variants_uz": ["kredit olish uchun necha yoshda bo'lish kerak", "yosh chegarasi qancha", "pensioner kredit ola oladimi", "necha yoshgacha kredit"],
+      "variants_ru": ["возраст для кредита", "до скольки лет дают кредит", "пенсионер может взять кредит"],
+      "answer_uz": "Iste'mol va avtokredit: 18–65 yosh. Ipoteka: 18–60 yosh. Pensiya yoshidagi fuqarolar ba'zi kredit turlarini ola olmaydi. Barcha kreditlar O'zbekiston fuqarolariga beriladi.",
+      "answer_ru": "Потребительский и авто: 18–65 лет. Ипотека: 18–60 лет. Пенсионерам некоторые кредиты недоступны. Все кредиты — для граждан Узбекистана.",
+      "nbo": null,
+      "source": "sqb.uz/uz/individuals/credits/"
+    },
+    {
+      "id": "qa_010",
+      "category": "kredit_muddat",
+      "tags": ["muddat", "necha yil", "necha oy", "maksimal muddat", "uzoq muddat"],
+      "variants_uz": ["kredit muddati qancha", "necha yilga kredit olsa bo'ladi", "maksimal kredit muddati", "eng uzoq muddat"],
+      "variants_ru": ["срок кредита максимум", "на сколько лет кредит", "максимальный срок"],
+      "answer_uz": "Iste'mol kredit: 5 yilgacha (60 oy). Avtokredit: 36 oygacha (3 yil). Ipoteka: 20 yilgacha (240 oy). Eng uzoq muddat — ipotekada, oylik to'lov qulay bo'ladi.",
+      "answer_ru": "Потребительский: до 5 лет. Авто: до 3 лет. Ипотека: до 20 лет. Самый длинный срок — ипотека, ежемесячный платёж комфортный.",
+      "nbo": {
+        "trigger_if": { "income": "low_medium" },
+        "upsell_uz": "Past daromadli mijozga maksimal muddat = past oylik to'lov ekanini tushuntiring — bu afzallik.",
+        "upsell_ru": "Для клиентов с низким доходом акцентируйте: длиннее срок = меньше ежемесячный платёж.",
+        "cross_sell": []
+      },
+      "source": "sqb.uz/uz/individuals/credits/"
+    }
+  ],
+
+  "objection_handling": [
+    {
+      "id": "obj_001",
+      "objection_uz": ["foiz juda yuqori", "foizi qimmat", "foiz ko'p", "boshqa bankda arzonroq"],
+      "objection_ru": ["процент слишком высокий", "дорого", "в другом банке дешевле"],
+      "intent": "foiz_e'tirozi",
+      "response_uz": "Tushunaman, foiz muhim mezon. SQBda ish haqi loyihasiga o'tsangiz stavka 1% pasayadi. Bundan tashqari, kredit muddatini uzaytirish orqali oylik to'lovingizni kamaytirishimiz mumkin.",
+      "response_ru": "Понимаю, ставка важна. Участие в зарплатном проекте СКБ снизит её на 1%. Также можно увеличить срок — ежемесячный платёж станет меньше.",
+      "compliance_safe": true,
+      "forbidden_phrases": ["kafolatlaymiz", "eng arzon bizda", "hech qaerda bunday yo'q"]
+    },
+    {
+      "id": "obj_002",
+      "objection_uz": ["o'ylab ko'raman", "vaqt kerak", "keyinroq", "hozir emas", "shoshilmayapman"],
+      "objection_ru": ["подумаю", "нужно время", "позже", "не сейчас", "не тороплюсь"],
+      "intent": "kechiktirish_e'tirozi",
+      "response_uz": "Albatta, muhim qarorni o'ylash kerak. Siz uchun dastlabki ariza holat tekshiruvini saqlaydi — bu sizni hech narsaga majbur qilmaydi. Istalgan vaqt bekor qilishingiz mumkin.",
+      "response_ru": "Конечно, важное решение нужно обдумать. Предварительная заявка сохраняет условия без обязательств. Отменить можно в любой момент.",
+      "compliance_safe": true,
+      "forbidden_phrases": ["bu taklif faqat bugun", "ertaga kech bo'ladi", "juda oz qoldi"]
+    },
+    {
+      "id": "obj_003",
+      "objection_uz": ["boshqa bankda bor", "boshqa bank yaxshiroq", "siznikidan boshqa bankni tanlagan"],
+      "objection_ru": ["в другом банке уже есть", "другой банк лучше", "уже выбрал другой банк"],
+      "intent": "raqobatchi_e'tirozi",
+      "response_uz": "Tushunaman. SQB O'zbekistondagi eng yirik tijorat banklaridan biri — Moody's Ba3 reytingi bor. Bizda avtokredit bozor o'rtacha stavkasi 23.4% — bu raqobatbardosh. Shartlarni solishtirmoqchi bo'lsangiz yordamlashaman.",
+      "response_ru": "Понимаю. СКБ — один из крупнейших коммерческих банков Узбекистана, рейтинг Moody's Ba3. Средняя ставка автокредита 23,4% — конкурентный уровень. Готов помочь сравнить условия.",
+      "compliance_safe": true,
+      "forbidden_phrases": ["ular yomon", "u bank ishonchsiz", "bizdan yaxshisi yo'q"]
+    },
+    {
+      "id": "obj_004",
+      "objection_uz": ["daromadim rasmiy emas", "ish joyim yo'q", "tadbirkorman", "o'zim ishlayman"],
+      "objection_ru": ["доход неофициальный", "нет официального места работы", "предприниматель", "самозанятый"],
+      "intent": "daromad_e'tirozi",
+      "response_uz": "O'z-o'zini band qilganlar uchun ham kredit mavjud — boshlang'ich to'lov 40% bo'lsa ipotekada rasmiy daromad shart emas. Avtokredit va iste'mol kreditida 28% stavka bilan ruxsat etiladi.",
+      "response_ru": "Для самозанятых кредиты доступны: ипотека при взносе от 40% без подтверждения дохода, потребительский и авто по ставке 28%.",
+      "compliance_safe": true,
+      "forbidden_phrases": []
+    },
+    {
+      "id": "obj_005",
+      "objection_uz": ["kredit tarixi yomon", "avval muammo bo'lgan", "qora ro'yxatdaman"],
+      "objection_ru": ["плохая кредитная история", "раньше были проблемы", "в чёрном списке"],
+      "intent": "kredit_tarixi_e'tirozi",
+      "response_uz": "Bu holat ko'rib chiqiladi. Kredit tarixi yaxshi bo'lmasa ham, kafillik yoki mol-mulk garovi bilan imkoniyat bo'lishi mumkin. Batafsil baholash uchun arizani ko'rib chiqishimiz kerak.",
+      "response_ru": "Этот вопрос рассматривается индивидуально. При наличии поручителя или залога имущества возможность есть. Нужно рассмотреть заявку детально.",
+      "compliance_safe": true,
+      "forbidden_phrases": ["albatta tasdiqlaymiz", "siz uchun istisno qilamiz"]
+    }
+  ],
+
+  "kyc_checklist": {
+    "description": "KYC/AML majburiy savollar — operatorda suhbat davomida belgilanishi kerak",
+    "trigger": "kredit yoki katta summa bo'lgan har qanday mahsulot",
+    "items": [
+      {
+        "id": "kyc_001",
+        "step": 1,
+        "required": true,
+        "question_uz": "Mijozning daromad manbai aniqlandimi?",
+        "question_ru": "Источник дохода клиента установлен?",
+        "prompt_uz": "Daromad manbaingiz qaysi — ish joyi, tadbirkorlik yoki boshqa?",
+        "prompt_ru": "Источник дохода — работа, бизнес или другое?",
+        "aml_flag": false
+      },
+      {
+        "id": "kyc_002",
+        "step": 2,
+        "required": true,
+        "question_uz": "Kredit maqsadi so'ralganmi?",
+        "question_ru": "Цель кредита уточнена?",
+        "prompt_uz": "Kredit qaysi maqsad uchun — iste'mol, uy, transport yoki biznes?",
+        "prompt_ru": "Кредит для каких целей — потребление, жильё, транспорт или бизнес?",
+        "aml_flag": false
+      },
+      {
+        "id": "kyc_003",
+        "step": 3,
+        "required": true,
+        "question_uz": "Shaxsini tasdiqlovchi hujjat tekshirildimi?",
+        "question_ru": "Документ удостоверяющий личность проверен?",
+        "prompt_uz": "Pasport yoki ID-kartangizni tasdiqlaymiz.",
+        "prompt_ru": "Подтвердим паспорт или ID-карту.",
+        "aml_flag": false
+      },
+      {
+        "id": "kyc_004",
+        "step": 4,
+        "required": true,
+        "question_uz": "PEP (siyosiy ta'sirli shaxs) tekshiruvi o'tkaziganmi?",
+        "question_ru": "Проверка PEP (политически значимое лицо) проведена?",
+        "prompt_uz": "Davlat mansabida yoki mansabdor oila a'zosi sifatida ro'yxatdan o'tganmisiz?",
+        "prompt_ru": "Вы занимаете государственную должность или являетесь родственником должностного лица?",
+        "aml_flag": true,
+        "alert_if_yes": "PEP_ALERT: Rahbariyatga xabar bering va kengaytirilgan KYC bajaring"
+      },
+      {
+        "id": "kyc_005",
+        "step": 5,
+        "required": true,
+        "question_uz": "Shaxsiy ma'lumotlarni qayta ishlashga rozilik olindimi?",
+        "question_ru": "Согласие на обработку персональных данных получено?",
+        "prompt_uz": "Shaxsiy ma'lumotlaringizni bank maqsadlarida qayta ishlashga rozilik berasizmi?",
+        "prompt_ru": "Даёте согласие на обработку персональных данных в целях банка?",
+        "aml_flag": false,
+        "legal_required": true
+      },
+      {
+        "id": "kyc_006",
+        "step": 6,
+        "required": false,
+        "question_uz": "Kredit bo'yicha qarz yuki ko'rsatkichi hisoblandi mi?",
+        "question_ru": "Показатель долговой нагрузки рассчитан?",
+        "prompt_uz": "Joriy kreditlar va oylik daromad nisbati 70% dan oshmaydi.",
+        "prompt_ru": "Долговая нагрузка не должна превышать 70% от дохода.",
+        "aml_flag": false
+      }
+    ]
+  },
+
+  "compliance_guardrails": {
+    "description": "Operator aytmasligi kerak bo'lgan iboralar va to'g'ri muqobillari",
+    "rules": [
+      {
+        "id": "cg_001",
+        "forbidden_uz": ["kafolatlaymiz", "albatta tasdiqlanadi", "100% beriladi"],
+        "forbidden_ru": ["гарантируем", "точно одобрят", "100% дадут"],
+        "alert": "WARN",
+        "reason": "Kredit qaroriga kafolat berish taqiqlangan",
+        "correct_uz": "Ko'rib chiqamiz va javob beramiz",
+        "correct_ru": "Рассмотрим и дадим ответ"
+      },
+      {
+        "id": "cg_002",
+        "forbidden_uz": ["eng arzon bizda", "hech qaerda bunday yo'q", "boshqalar yomon"],
+        "forbidden_ru": ["самые низкие ставки только у нас", "нигде лучше нет", "другие хуже"],
+        "alert": "WARN",
+        "reason": "Raqobatchilarni kamsitish va asossiz da'volar taqiqlangan",
+        "correct_uz": "SQB raqobatbardosh shartlar taklif qiladi",
+        "correct_ru": "СКБ предлагает конкурентные условия"
+      },
+      {
+        "id": "cg_003",
+        "forbidden_uz": ["bu taklif faqat bugun", "ertaga kech bo'ladi", "shoshiling"],
+        "forbidden_ru": ["только сегодня", "завтра будет поздно", "торопитесь"],
+        "alert": "WARN",
+        "reason": "Sun'iy shoshilinch yaratish ruhiy bosim hisoblanadi",
+        "correct_uz": "Shartlar hozir amalda, o'ylashingiz mumkin",
+        "correct_ru": "Условия актуальны, можете обдумать"
+      },
+      {
+        "id": "cg_004",
+        "forbidden_uz": ["foizingiz aniq X% bo'ladi", "to'lov aniq X so'm bo'ladi"],
+        "forbidden_ru": ["ставка точно будет X%", "платёж точно будет X сумов"],
+        "alert": "WARN",
+        "reason": "Aniq raqam va'da qilish — skoring natijasiga bog'liq",
+        "correct_uz": "Foiz stavkasi sizning skoring natijangizga qarab belgilanadi",
+        "correct_ru": "Ставка определяется по результатам вашего скоринга"
+      },
+      {
+        "id": "cg_005",
+        "forbidden_uz": ["kafolatlangan foyda", "yo'qotmaysiz", "xavfsiz investitsiya"],
+        "forbidden_ru": ["гарантированный доход", "не потеряете", "безрисковые инвестиции"],
+        "alert": "CRITICAL",
+        "reason": "Depozit daromadiga kafolat berish qonunga zid",
+        "correct_uz": "Depozit bo'yicha shartnomada ko'rsatilgan foiz to'lanadi",
+        "correct_ru": "По депозиту выплачивается ставка, указанная в договоре"
+      }
+    ]
+  },
+
+  "post_call_template": {
+    "description": "Qo'ng'iroq yakunida CRM ga avtomatik yoziladigan qisqartma template",
+    "fields": [
+      { "key": "call_date", "type": "datetime", "auto": true },
+      { "key": "agent_id", "type": "string", "auto": true },
+      { "key": "client_id", "type": "string", "source": "CRM" },
+      { "key": "intent_detected", "type": "string[]", "source": "AI" },
+      { "key": "products_discussed", "type": "string[]", "source": "AI" },
+      { "key": "objections_raised", "type": "string[]", "source": "AI" },
+      { "key": "nbo_suggested", "type": "string", "source": "AI" },
+      { "key": "kyc_completed", "type": "boolean", "source": "checklist" },
+      { "key": "compliance_warnings", "type": "string[]", "source": "AI" },
+      { "key": "sale_result", "type": "enum", "values": ["sold", "interested", "rejected", "callback"], "source": "agent" },
+      { "key": "next_action", "type": "string", "source": "agent" },
+      { "key": "qa_score", "type": "number", "range": [0, 100], "source": "AI" },
+      { "key": "summary_uz", "type": "text", "source": "AI", "max_chars": 300 }
+    ]
+  }
+}

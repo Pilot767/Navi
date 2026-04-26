@@ -1,0 +1,65 @@
+{
+  "version": "1",
+  "description": "UI dan Chat ID ni nusxalab conversation_id ga yozing. match ichiga mijoz ayta oladigan 2–5 ta qisqa ibora. reply_uz / reply_ru ga tayyor operator replikasi. Faqat shu ID li chatda ishlaydi; boshqa chatlarga ta’sir qilmaydi. Backend o‘zgargach restart qiling.",
+  "entries": [
+    {
+      "conversation_id": "c0e3acbb92e2c19dc66f2056",
+      "match": [
+        "assalomu alaykum",
+        "chet eldan pul",
+        "pul yuborsam",
+        "qabul qilsam",
+        "xalqaro o'tkazma",
+        "xalqaro o‘tkazma",
+        "swift",
+        "komissiya qancha",
+        "komissiya qancha bo‘ladi",
+        "komissiya qancha bo'ladi"
+      ],
+      "reply_uz": "Va alaykum assalom. SQB ma’lumotlariga ko‘ra, komissiya xizmat turiga bog‘liq. Masalan, SWIFT orqali xalqaro o‘tkazmalarda odatda bank komissiyasi va vositachi banklar to‘lovlari bo‘lishi mumkin. Aniq tarifni sizning yo‘nalish va valyutangiz bo‘yicha tizimdan tekshirib, shaffof aytib beraman.",
+      "reply_ru": "Здравствуйте. По данным SQB комиссия зависит от типа услуги. Например, при международных переводах через SWIFT обычно возможны комиссия банка и платежи посреднических банков. Точный тариф проверю в системе по вашему направлению и валюте и озвучу прозрачно."
+    },
+    {
+      "conversation_id": "c0e3acbb92e2c19dc66f2056",
+      "match": [
+        "taxminan foiz",
+        "aniq miqdor",
+        "foiz bormi",
+        "minimal summa",
+        "minimal belgilangan",
+        "qancha foiz",
+        "процент",
+        "точная сумма"
+      ],
+      "reply_uz": "Odatda SWIFT o‘tkazmalarida komissiya yuborilayotgan summa va valyutaga qarab belgilanadi — masalan, foiz yoki minimal belgilangan summa shaklida bo‘lishi mumkin. Bundan tashqari, ayrim hollarda qo‘shimcha banklar ham komissiya ushlab qolishi mumkin. Aniq qiymatlarni tarif va yo‘nalish bo‘yicha tizimdan tekshirib aytaman, raqamni oldindan taxmin qilmayman.",
+      "reply_ru": "Обычно по SWIFT комиссия зависит от суммы и валюты — может быть в виде процента или минимальной фиксированной суммы. Плюс посреднические банки могут удерживать дополнительные комиссии. Точные значения сообщу после проверки тарифа и направления в системе, без догадок."
+    },
+    {
+      "conversation_id": "c0e3acbb92e2c19dc66f2056",
+      "match": [
+        "eng arzon",
+        "arzon variant",
+        "eng qulay",
+        "eng tez",
+        "western union",
+        "moneygram",
+        "ар дешевле",
+        "самый дешевый"
+      ],
+      "reply_uz": "Agar tezlik va xarajat muhim bo‘lsa, ba’zan xalqaro pul o‘tkazma tizimlari ham variant bo‘lishi mumkin, lekin shartlar va limitlar har doim bir xil emas. Sizning holatingiz uchun eng mos va rasmiy tarifni SQB tizimi va joriy kurs/kanal bo‘yicha solishtirib aytaman; aniq tanlov uchun filial yoki rasmiy kanallar bilan ham tasdiqlash mumkin.",
+      "reply_ru": "Если важны скорость и стоимость, иногда рассматривают международные системы переводов, но условия и лимиты различаются. Для вашей ситуации сравню официальные варианты SQB по тарифу и каналу; при необходимости можно подтвердить в отделении или официальном канале."
+    },
+    {
+      "conversation_id": "c0e3acbb92e2c19dc66f2056",
+      "match": [
+        "rahmat",
+        "rakhmat",
+        "katta rahmat",
+        "спасибо",
+        "благодарю"
+      ],
+      "reply_uz": "Marhamat, yana savollaringiz bo‘lsa, yordam beraman. Yaxshi qoling.",
+      "reply_ru": "Пожалуйста, если появятся вопросы — помогу. Всего доброго."
+    }
+  ]
+}

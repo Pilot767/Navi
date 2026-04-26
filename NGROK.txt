@@ -1,0 +1,30 @@
+NGROK — 2 ta URL (backend + frontend)
+=====================================
+
+1) O‘rnatish: https://ngrok.com/download  yoki  choco install ngrok
+
+2) Authtoken (bir marta):
+   ngrok config add-authtoken <SIZNING_TOKEN>
+
+3) Loyihani mahalliy ishga tushiring:
+   - AI-SHA\backend     →  npm run dev   (port 3001)
+   - AI-SHA\copilot-ui  →  npm run dev   (odatda 5173; boshqa bo‘lsa ngrok.yml da addr ni o‘zgartiring)
+
+4) Ikki tunnelni birga:
+   AI-SHA papkasida:
+   ngrok start --all
+   (ngrok.yml faylidan backend va frontend URL larni ko‘rasiz)
+
+5) Frontendni backend ngrok URL ga ulash:
+   copilot-ui\.env.local fayl yarating:
+
+   VITE_API_BASE_URL=https://XXXX.ngrok-free.app
+
+   Bu yerda XXXX — ngrok terminalidagi BACKEND tunnel (3001) ning https manzili.
+   Faylni saqlab Vite ni qayta ishga tushiring (npm run dev).
+
+6) Tashqi odam brauzerda FRONTEND ngrok URL ni ochadi (5173 tunnel).
+   STT va /ai/reply backend tunnel orqali ketadi.
+
+Eslatma: ngrok bepul reja ba’zan brauzer ogohlantirish sahifasini ko‘rsatadi; API so‘rovlarida
+skip header qo‘yilgan. WebSocket ba’zan muhitga bog‘liq; ishlamasa ngrok rejasini tekshiring.

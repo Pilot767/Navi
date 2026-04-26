@@ -1,0 +1,69 @@
+{
+  "version": "demo-v2",
+  "snippets": [
+    {
+      "id": "payments_general",
+      "tags": ["komissiya", "to'lov", "payment", "commission", "fee", "tarif"],
+      "source": "sqb.uz",
+      "url": "https://sqb.uz/uz/individuals/payments/",
+      "text_uz": "To‘lov va o‘tkazmalar bo‘yicha komissiya tanlangan kanal (ilova, kassa, bankomat, SWIFT) hamda tarifga bog‘liq. Aniq komissiyani SQB tarifidan tekshirilib aytiladi.",
+      "text_ru": "Комиссия по платежам и переводам зависит от канала (приложение/касса/банкомат/SWIFT) и тарифа. Точную комиссию сообщают после проверки тарифа."
+    },
+    {
+      "id": "transfers_swift",
+      "tags": ["swift", "o'tkazma", "o‘tkazma", "перевод", "международный", "rossiya", "komissiya"],
+      "source": "sqb.uz",
+      "url": "https://sqb.uz/uz/useful-for-you/about-tranfer-swift-uz/",
+      "text_uz": "Xalqaro pul o‘tkazmalarida (SWIFT) komissiya va yetib borish muddati yo‘nalish hamda bank shartlariga bog‘liq bo‘ladi. Operator aniq tarifni tekshirib, mijozga shaffof aytishi kerak.",
+      "text_ru": "Для международных переводов (SWIFT) комиссия и сроки зависят от направления и условий банков. Оператор должен проверить тариф и прозрачно озвучить клиенту."
+    },
+    {
+      "id": "cards_general",
+      "tags": ["karta", "uzcard", "humo", "visa", "mastercard", "комиссия", "tarif", "keshbek"],
+      "source": "sqb.uz",
+      "url": "https://sqb.uz/uz/individuals/bank-cards/",
+      "text_uz": "Kartalar bo‘yicha xizmat haqi va komissiyalar karta turiga bog‘liq. Mijoz ehtiyojiga qarab (onlayn to‘lov, safar, valyuta, keshbek) mos karta tanlanadi va tariflar tekshirib aytiladi.",
+      "text_ru": "По картам обслуживание и комиссии зависят от типа карты. Подбирают карту под задачу клиента (онлайн‑платежи, поездки, валюта, кэшбэк) и затем проверяют тариф."
+    },
+    {
+      "id": "credits_general",
+      "tags": ["kredit", "loan", "qarz", "ипотека", "автокредит", "stavka", "foiz"],
+      "source": "sqb.uz",
+      "url": "https://sqb.uz/uz/individuals/credits/",
+      "text_uz": "Kredit shartlari (stavka, limit, muddat) mijoz skoringi va daromadiga bog‘liq. Operator absolut va’da bermasdan, mos variantni skoring natijasiga qarab taklif qiladi.",
+      "text_ru": "Условия кредита (ставка, лимит, срок) зависят от скоринга и дохода клиента. Оператор предлагает подходящий вариант без абсолютных обещаний."
+    },
+    {
+      "id": "deposits_page",
+      "tags": ["omonat", "depozit", "депозит", "foiz", "kapitalizatsiya"],
+      "source": "sqb.uz",
+      "url": "https://sqb.uz/uz/individuals/deposits/",
+      "text_uz": "Omonat bo‘yicha foiz va shartlar tanlangan mahsulot, summa va muddatga bog‘liq. Muddatidan oldin yechib olish qoidalari alohida ko‘rib chiqiladi.",
+      "text_ru": "По вкладу ставка и условия зависят от продукта, суммы и срока. Условия досрочного снятия уточняются отдельно."
+    },
+    {
+      "id": "mortgage_page",
+      "tags": ["ipoteka", "ипотека", "uy", "garov"],
+      "source": "sqb.uz",
+      "url": "https://sqb.uz/uz/individuals/ipoteka/",
+      "text_uz": "Ipoteka mahsulotlarida boshlang‘ich to‘lov, sug‘urta va baholash talablari bank siyosatiga bog‘liq. Aniq shartlar hujjatlar va tekshiruv asosida aniqlanadi.",
+      "text_ru": "В ипотеке первоначальный взнос, страхование и оценка зависят от политики банка. Точные условия определяются после проверки документов."
+    },
+    {
+      "id": "card_security",
+      "tags": ["blok", "pin", "3ds", "xavfsizlik", "sms", "уведомлен", "потерял"],
+      "source": "sqb.uz",
+      "url": "https://sqb.uz/uz/individuals/bank-cards/",
+      "text_uz": "Karta bloklanganida yoki shubhali operatsiyada mijozga tezkor bloklash va call-center orqali identifikatsiya qoidalari tushuntiriladi. PIN va OTP hech kimga berilmasligi aytiladi.",
+      "text_ru": "При блокировке карты или подозрительных операциях клиенту объясняют правила блокировки и идентификации через контакт‑центр. PIN и OTP никому не передаются."
+    },
+    {
+      "id": "currency_office",
+      "tags": ["valyuta", "kurs", "обмен", "конвертац", "dollar"],
+      "source": "sqb.uz",
+      "url": "https://sqb.uz/uz/individuals/payments/",
+      "text_uz": "Valyuta operatsiyalarida kurs va spread joriy bank kursiga bog‘liq. Naqd yoki kartadan operatsiya uchun cheklovlar kanalga qarab farq qilishi mumkin.",
+      "text_ru": "При валютных операциях курс и спред зависят от текущего курса банка. Лимиты для наличных или операций с карты могут отличаться по каналу."
+    }
+  ]
+}

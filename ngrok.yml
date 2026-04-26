@@ -1,0 +1,15 @@
+# Ikkita tunnel: backend (3001) va frontend (5173).
+# 1) Authtoken: https://dashboard.ngrok.com/ → ngrok config add-authtoken TOKEN
+# 2) Backend + frontend ishga tushiring: backend npm run dev, copilot-ui npm run dev
+# 3) Loyiha ildizidan: ngrok start --all
+#
+# Vite boshqa portda bo‘lsa (masalan 5174), pastdagi addr ni o‘zgartiring.
+
+version: '2'
+tunnels:
+  backend:
+    proto: http
+    addr: 3001
+  frontend:
+    proto: http
+    addr: 5173

@@ -1,0 +1,18 @@
+{
+  "version": "demo-v1",
+  "rules": [
+    {
+      "id": "fees_commission",
+      "match": ["komissiya", "tarif", "xizmat haqi", "commission", "fee", "комисси", "тариф"],
+      "reply_uz": "Tushundim. Komissiya tanlangan kanal va tarifga bog‘liq bo‘ladi. SQB tizimida mijoz tarixini ko‘rib, mos tarif bo‘yicha aynan shu operatsiya uchun komissiyani tez aniqlab beraman va operatorga tayyor replika qilib chiqaraman.",
+      "reply_ru": "Понял. Комиссия зависит от канала и тарифа. Я быстро проверю в системе SQB по истории клиента подходящий тариф и сразу выдам оператору готовую реплику с корректными условиями (без выдуманных цифр)."
+    },
+    {
+      "id": "swift_transfer",
+      "match": ["swift", "xalqaro", "международ", "перевод", "o‘tkazma", "o'tkazma"],
+      "reply_uz": "Tushundim. Xalqaro o‘tkazmalarda (SWIFT) komissiya va muddat yo‘nalish hamda tarifga bog‘liq bo‘ladi. Mijoz profiliga qarab to‘g‘ri kanalni tavsiya qilaman va tarifni tekshirib, shaffof tushuntirish uchun operatorga tayyor replika chiqaraman.",
+      "reply_ru": "Понял. Для международных переводов (SWIFT) комиссия и сроки зависят от направления и тарифа. По профилю клиента я предложу подходящий канал и после проверки тарифа выдам оператору готовую реплику."
+    }
+  ]
+}
+

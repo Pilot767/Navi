@@ -1,0 +1,521 @@
+.smsPage {
+  position: relative;
+  min-height: 100svh;
+  padding: 20px 22px 120px;
+  overflow: visible;
+  color: var(--text-h);
+}
+
+.smsBg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(1200px 600px at 10% -10%, color-mix(in srgb, var(--sqb-red) 18%, transparent), transparent 55%),
+    radial-gradient(900px 500px at 95% 20%, color-mix(in srgb, var(--sqb-blue) 22%, transparent), transparent 50%),
+    radial-gradient(700px 400px at 50% 100%, color-mix(in srgb, var(--accent) 12%, transparent), transparent 45%),
+    linear-gradient(165deg, #f4f7fc 0%, #eef2f8 45%, #e8edf6 100%);
+  pointer-events: none;
+}
+
+.smsHeader {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.smsHeaderLeft {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.smsBack {
+  appearance: none;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.75);
+  color: var(--text-h);
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 4px;
+  box-shadow: 0 8px 24px rgba(11, 58, 123, 0.08);
+}
+.smsBack:hover {
+  border-color: color-mix(in srgb, var(--accent) 35%, var(--border));
+}
+
+.smsTitle {
+  margin: 0;
+  font-family: var(--heading);
+  font-size: clamp(22px, 3vw, 28px);
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  background: linear-gradient(120deg, var(--sqb-blue-dark), var(--sqb-blue) 40%, var(--sqb-red) 95%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.smsSub {
+  margin: 6px 0 0;
+  font-size: 13px;
+  color: var(--text);
+  max-width: 520px;
+  line-height: 1.45;
+}
+
+.smsHeaderRight {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.smsBulkBar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.smsBulkBtn {
+  appearance: none;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--text-h);
+  font-size: 12px;
+  font-weight: 650;
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.smsBulkBtn:hover {
+  border-color: color-mix(in srgb, var(--accent) 30%, var(--border));
+}
+.smsBulkBtn_primary {
+  border-color: color-mix(in srgb, var(--sqb-blue) 35%, var(--border));
+  background: color-mix(in srgb, var(--accent-bg) 55%, white);
+  color: var(--sqb-blue-dark);
+}
+
+.smsHeaderStat {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 12px 18px;
+  border-radius: 16px;
+  border: 1px solid color-mix(in srgb, var(--border) 80%, var(--accent));
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 12px 40px rgba(11, 58, 123, 0.1);
+}
+
+.smsStatN {
+  font-family: var(--mono);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--sqb-blue-dark);
+  line-height: 1;
+}
+.smsStatL {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text);
+  margin-top: 4px;
+}
+
+.smsToast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  max-width: min(560px, calc(100vw - 32px));
+  padding: 14px 20px;
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--sqb-blue-dark) 92%, white);
+  color: #fff;
+  font-size: 13px;
+  line-height: 1.4;
+  box-shadow: 0 20px 50px rgba(8, 42, 89, 0.35);
+  animation: smsPop 0.35s ease-out;
+}
+
+@keyframes smsPop {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.smsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  align-items: stretch;
+}
+
+@media (max-width: 1100px) {
+  .smsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.smsColumn {
+  position: relative;
+  border-radius: 20px;
+  padding: 18px 16px 20px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 16px 48px rgba(15, 23, 42, 0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-height: 0;
+}
+
+.smsColumnGlow {
+  position: absolute;
+  inset: -40% -20% auto;
+  height: 120px;
+  opacity: 0.55;
+  filter: blur(40px);
+  pointer-events: none;
+}
+
+.tier_weak .smsColumnGlow {
+  background: linear-gradient(90deg, #ef4444, #f97316);
+}
+.tier_mid .smsColumnGlow {
+  background: linear-gradient(90deg, #f59e0b, #eab308);
+}
+.tier_strong .smsColumnGlow {
+  background: linear-gradient(90deg, #10b981, #0b3a7b);
+}
+
+.tier_weak {
+  border-color: color-mix(in srgb, #ef4444 28%, var(--border));
+}
+.tier_mid {
+  border-color: color-mix(in srgb, #d97706 30%, var(--border));
+}
+.tier_strong {
+  border-color: color-mix(in srgb, #0b3a7b 35%, var(--border));
+}
+
+.smsColumnHead {
+  position: relative;
+  z-index: 1;
+  padding-bottom: 4px;
+  border-bottom: 1px dashed color-mix(in srgb, var(--border) 90%, transparent);
+}
+
+.smsColumnBadge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 6px 10px;
+  border-radius: 999px;
+  margin-bottom: 8px;
+}
+
+.tier_weak .smsColumnBadge {
+  background: color-mix(in srgb, #fee2e2 90%, white);
+  color: #b91c1c;
+  border: 1px solid color-mix(in srgb, #ef4444 35%, transparent);
+}
+.tier_mid .smsColumnBadge {
+  background: color-mix(in srgb, #fef3c7 92%, white);
+  color: #b45309;
+  border: 1px solid color-mix(in srgb, #f59e0b 35%, transparent);
+}
+.tier_strong .smsColumnBadge {
+  background: color-mix(in srgb, #dbeafe 90%, white);
+  color: #0b3a7b;
+  border: 1px solid color-mix(in srgb, #0b3a7b 28%, transparent);
+}
+
+.smsColumnTitle {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 650;
+  color: var(--text-h);
+}
+.smsColumnMeta {
+  margin: 4px 0 0;
+  font-size: 12px;
+  color: var(--text);
+}
+
+.smsCustomers {
+  position: relative;
+  z-index: 1;
+}
+
+.smsCustomersToolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+.smsTierPickBtns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.smsPickBtn {
+  appearance: none;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--text-h);
+  font-size: 11px;
+  font-weight: 650;
+  padding: 5px 9px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.smsPickBtn:hover {
+  border-color: color-mix(in srgb, var(--accent) 28%, var(--border));
+}
+.smsPickBtn_muted {
+  color: var(--text);
+  opacity: 0.92;
+}
+
+.smsCustomersLabel,
+.smsOffersLabel {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--text) 75%, var(--text-h));
+  margin-bottom: 0;
+}
+
+.smsCustomerList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  /* Butun sahifa scroll bo‘lgani uchun ichki scroll qisqartirildi */
+  max-height: min(200px, 28vh);
+  overflow-y: auto;
+}
+
+.smsCustomer {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 8px 10px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid color-mix(in srgb, var(--border) 85%, transparent);
+}
+
+.smsCustomer_selectable {
+  cursor: pointer;
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.12s ease, background 0.12s ease;
+}
+.smsCustomer_selectable:hover {
+  border-color: color-mix(in srgb, var(--accent) 22%, var(--border));
+}
+.smsCustomer_on {
+  border-color: color-mix(in srgb, var(--sqb-blue) 40%, var(--border));
+  background: color-mix(in srgb, var(--accent-bg) 35%, rgba(255, 255, 255, 0.85));
+}
+
+.smsCustomerCb {
+  width: 18px;
+  height: 18px;
+  margin-top: 8px;
+  flex-shrink: 0;
+  accent-color: var(--sqb-blue);
+  cursor: pointer;
+}
+
+.smsCustomerAv {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  font-size: 11px;
+  font-weight: 800;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.tier_weak .smsCustomerAv {
+  background: linear-gradient(145deg, #ef4444, #b91c1c);
+}
+.tier_mid .smsCustomerAv {
+  background: linear-gradient(145deg, #f59e0b, #b45309);
+}
+.tier_strong .smsCustomerAv {
+  background: linear-gradient(145deg, #0b3a7b, #10b981);
+}
+
+.smsCustomerName {
+  font-size: 13px;
+  font-weight: 650;
+  color: var(--text-h);
+}
+.smsCustomerPhone {
+  font-size: 11px;
+  color: var(--text);
+  margin-top: 2px;
+}
+.smsCustomerHint {
+  font-size: 11px;
+  color: color-mix(in srgb, var(--text) 88%, var(--accent));
+  margin-top: 2px;
+}
+
+.smsOffers {
+  position: relative;
+  z-index: 1;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 0;
+}
+
+.smsOfferCard {
+  border-radius: 16px;
+  padding: 12px 12px 12px;
+  border: 1px solid color-mix(in srgb, var(--border) 88%, var(--accent));
+  background: linear-gradient(165deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.92) 100%);
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
+}
+
+.smsOfferTop {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.smsOfferIdx {
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 800;
+  background: color-mix(in srgb, var(--code-bg) 80%, white);
+  color: var(--sqb-blue-dark);
+  flex-shrink: 0;
+}
+
+.smsOfferTitle {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-h);
+}
+.smsOfferBadge {
+  display: inline-block;
+  margin-top: 4px;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--accent-bg) 70%, transparent);
+  color: var(--sqb-blue-dark);
+}
+
+.smsOfferLab {
+  display: block;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.smsOfferText {
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  padding: 10px 11px;
+  font-size: 12px;
+  line-height: 1.45;
+  font-family: var(--sans, system-ui, sans-serif);
+  color: var(--text-h);
+  resize: vertical;
+  min-height: 88px;
+  background: rgba(255, 255, 255, 0.92);
+}
+.smsOfferText:focus {
+  outline: 2px solid color-mix(in srgb, var(--accent) 45%, transparent);
+  outline-offset: 1px;
+}
+
+.smsSendBtn {
+  margin-top: 10px;
+  width: 100%;
+  appearance: none;
+  border: 0;
+  border-radius: 12px;
+  padding: 11px 14px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  color: #fff;
+  transition: transform 0.05s ease, box-shadow 0.15s ease;
+}
+
+.tier_weak .smsSendBtn {
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+  box-shadow: 0 8px 24px rgba(220, 38, 38, 0.35);
+}
+.tier_mid .smsSendBtn {
+  background: linear-gradient(135deg, #d97706, #b45309);
+  box-shadow: 0 8px 24px rgba(217, 119, 6, 0.3);
+}
+.tier_strong .smsSendBtn {
+  background: linear-gradient(135deg, #0b3a7b, #047857);
+  box-shadow: 0 8px 24px rgba(11, 58, 123, 0.32);
+}
+
+.smsSendBtn:hover {
+  transform: translateY(-1px);
+}
+.smsSendBtn:active {
+  transform: translateY(0);
+}
+
+.smsSendBtn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}

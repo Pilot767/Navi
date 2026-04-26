@@ -1,0 +1,149 @@
+{
+  "version": "demo-v2",
+  "customers": [
+    {
+      "customer_id": "C-102938",
+      "segment": "Mass",
+      "risk_band": "B",
+      "score": 712,
+      "monthly_income_uzs": 6800000,
+      "salary_card": true,
+      "active_loans": 1,
+      "dpd30_last_12m": 0,
+      "avg_monthly_turnover_uzs": 9200000,
+      "signals": ["Oylik kartaga tushadi", "So‘nggi 6 oyda aylanma o‘sadi", "Avto uchun kredit qiziqishi"]
+    },
+    {
+      "customer_id": "C-334455",
+      "segment": "Affluent",
+      "risk_band": "A",
+      "score": 781,
+      "monthly_income_uzs": 18500000,
+      "salary_card": true,
+      "active_loans": 0,
+      "dpd30_last_12m": 0,
+      "avg_monthly_turnover_uzs": 24000000,
+      "signals": ["Depozitga moyillik", "Premium xizmatlarga qiziqish", "Valyuta operatsiyalari"]
+    },
+    {
+      "customer_id": "C-778899",
+      "segment": "Mass",
+      "risk_band": "C",
+      "score": 642,
+      "monthly_income_uzs": 5200000,
+      "salary_card": false,
+      "active_loans": 2,
+      "dpd30_last_12m": 1,
+      "avg_monthly_turnover_uzs": 6100000,
+      "signals": ["Safar/online to‘lovlar", "Valyuta xarajatlari", "Kredit yuki o‘rtacha"]
+    },
+    {
+      "customer_id": "C-440011",
+      "segment": "Mass",
+      "risk_band": "B",
+      "score": 698,
+      "monthly_income_uzs": 7500000,
+      "salary_card": true,
+      "active_loans": 0,
+      "dpd30_last_12m": 0,
+      "avg_monthly_turnover_uzs": 11000000,
+      "signals": ["Kredit karta limitiga qiziqish", "Onlayn xaridlar", "Intizom yaxshi"]
+    },
+    {
+      "customer_id": "C-550022",
+      "segment": "Mass",
+      "risk_band": "B",
+      "score": 665,
+      "monthly_income_uzs": 4800000,
+      "salary_card": true,
+      "active_loans": 0,
+      "dpd30_last_12m": 0,
+      "avg_monthly_turnover_uzs": 5500000,
+      "signals": ["Tezkor mikroqarz ehtiyoji", "Rasmiy daromad", "Kredit tarixisiz / qisqa"]
+    },
+    {
+      "customer_id": "C-660033",
+      "segment": "SME",
+      "risk_band": "B",
+      "score": 689,
+      "monthly_income_uzs": 22000000,
+      "salary_card": false,
+      "active_loans": 1,
+      "dpd30_last_12m": 0,
+      "avg_monthly_turnover_uzs": 45000000,
+      "signals": ["Aylanma kapital ehtiyoji", "Hisob-kitob hujjatlari bor", "Garov masalasini muhokama qiladi"]
+    },
+    {
+      "customer_id": "C-770044",
+      "segment": "Mass",
+      "risk_band": "B",
+      "score": 704,
+      "monthly_income_uzs": 6200000,
+      "salary_card": true,
+      "active_loans": 0,
+      "dpd30_last_12m": 0,
+      "avg_monthly_turnover_uzs": 8800000,
+      "signals": ["Xalqaro o‘tkazma (Rossiya)", "Valyuta kirimi", "Komissiya sezgir"]
+    },
+    {
+      "customer_id": "C-880055",
+      "segment": "Mass",
+      "risk_band": "A",
+      "score": 738,
+      "monthly_income_uzs": 14000000,
+      "salary_card": true,
+      "active_loans": 0,
+      "dpd30_last_12m": 0,
+      "avg_monthly_turnover_uzs": 16000000,
+      "signals": ["Uy-joy sotib olish", "Boshlang‘ich to‘lov tayyorlash", "Uzoq muddatli rejada"]
+    },
+    {
+      "customer_id": "C-990066",
+      "segment": "Affluent",
+      "risk_band": "A",
+      "score": 802,
+      "monthly_income_uzs": 32000000,
+      "salary_card": true,
+      "active_loans": 0,
+      "dpd30_last_12m": 0,
+      "avg_monthly_turnover_uzs": 52000000,
+      "signals": ["Premium segment", "Xalqaro sayohat", "Konsyerj xizmatlarga qiziqish"]
+    },
+    {
+      "customer_id": "C-120077",
+      "segment": "Mass",
+      "risk_band": "B",
+      "score": 671,
+      "monthly_income_uzs": 5400000,
+      "salary_card": true,
+      "active_loans": 0,
+      "dpd30_last_12m": 0,
+      "avg_monthly_turnover_uzs": 7200000,
+      "signals": ["Mobil ilova faol", "Parol tiklash / xavfsizlik savollari", "Kundalik to‘lovlar"]
+    },
+    {
+      "customer_id": "C-130088",
+      "segment": "Mass",
+      "risk_band": "B",
+      "score": 715,
+      "monthly_income_uzs": 9100000,
+      "salary_card": true,
+      "active_loans": 1,
+      "dpd30_last_12m": 0,
+      "avg_monthly_turnover_uzs": 14000000,
+      "signals": ["Valyuta operatsiyalari", "Konvertatsiya", "Kurs va limit haqida savol"]
+    },
+    {
+      "customer_id": "C-140099",
+      "segment": "Mass",
+      "risk_band": "B",
+      "score": 688,
+      "monthly_income_uzs": 4300000,
+      "salary_card": true,
+      "active_loans": 0,
+      "dpd30_last_12m": 0,
+      "avg_monthly_turnover_uzs": 9800000,
+      "signals": ["Keshbek / bonus dasturlar", "Kundalik xarajatlar kartasi", "Onlayn to‘lovlar"]
+    }
+  ]
+}

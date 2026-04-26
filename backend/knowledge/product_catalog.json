@@ -1,0 +1,163 @@
+{
+  "version": "demo-v2",
+  "currency": "UZS",
+  "items": [
+    {
+      "id": "microloan_online",
+      "name": "Onlayn mikroqarz",
+      "category": "kredit",
+      "languages": ["uz", "ru"],
+      "facts": [
+        "Rasmiylashtirish SQB Mobile orqali amalga oshiriladi (demo).",
+        "Shartlar (summa, muddat, stavka) skoring va mijoz profiliga bog‘liq.",
+        "Aniq foiz/limit faqat tekshiruvdan keyin aytiladi; absolut va’da berilmaydi."
+      ],
+      "keywords": ["mikroqarz", "mikrokredit", "tez pul", "qarz", "microloan", "микрозайм", "микрокредит"]
+    },
+    {
+      "id": "credit_cash",
+      "name": "Naqd kredit",
+      "category": "kredit",
+      "languages": ["uz", "ru"],
+      "facts": [
+        "Kredit shartlari mijozning daromadi va skoringiga bog‘liq.",
+        "Daromad manbai, maqsad va mavjud majburiyatlar aniqlashtiriladi (KYC/DSR).",
+        "Tasdiqlash va limit bo‘yicha kafolatli va’da berilmaydi."
+      ],
+      "keywords": ["kredit", "naqd", "qarz", "loan", "кредит", "наличные", "займ"]
+    },
+    {
+      "id": "deposit",
+      "name": "Omonat (depozit)",
+      "category": "omonat",
+      "languages": ["uz", "ru"],
+      "facts": [
+        "Foiz stavkasi va shartlar omonat turi, summa va muddatga bog‘liq.",
+        "Muddatidan oldin yechib olish shartlari alohida bo‘lishi mumkin.",
+        "Aniq shartlar uchun summa va muddat aniqlashtiriladi."
+      ],
+      "keywords": ["omonat", "depozit", "депозит", "вклад", "foiz", "stavka"]
+    },
+    {
+      "id": "cards",
+      "name": "Bank kartalar",
+      "category": "karta",
+      "languages": ["uz", "ru"],
+      "facts": [
+        "Karta tanlovi ehtiyojga bog‘liq: onlayn to‘lovlar, safar/valyuta, kundalik xarajatlar.",
+        "Xizmat haqi/komissiya va limitlar karta turiga qarab farq qiladi.",
+        "Aniq tariflar uchun karta turini aniqlashtirib berish kerak."
+      ],
+      "keywords": ["karta", "kartasi", "карт", "visa", "mastercard", "uzcard", "humo", "keshbek", "cashback"]
+    },
+    {
+      "id": "transfers",
+      "name": "Pul o‘tkazmalari",
+      "category": "transfer",
+      "languages": ["uz", "ru"],
+      "facts": [
+        "Komissiya va muddat kanalga bog‘liq (xalqaro/ichki).",
+        "Mijoz qayerdan/qayerga yuborishini aniqlashtirish kerak.",
+        "Aniq komissiya tarifiga mos ravishda tekshirib aytiladi."
+      ],
+      "keywords": ["o‘tkazma", "o'tkazma", "transfer", "swift", "rossiya", "перевод", "SWIFT"]
+    },
+    {
+      "id": "credit_card",
+      "name": "Kredit karta",
+      "category": "karta",
+      "languages": ["uz", "ru"],
+      "facts": [
+        "Kredit kartasi limiti va shartlari skoring, daromad va bank ichki siyosatiga bog‘liq.",
+        "Grafsiz muddat va foiz mexanizmi karta shartnomasisiga ko‘ra farq qilishi mumkin.",
+        "Aniq limit/stavka faqat tizim tekshiruvidan keyin; oldindan kafolatlanmaydi."
+      ],
+      "keywords": ["kredit karta", "кредитная карта", "limit", "грац", "karta limit"]
+    },
+    {
+      "id": "premium_card",
+      "name": "Premium karta",
+      "category": "karta",
+      "languages": ["uz", "ru"],
+      "facts": [
+        "Premium kartalar kengaytirilgan xizmatlar (konsyerj, lounge, sug‘urta paketlari) bilan bog‘liq bo‘lishi mumkin.",
+        "Yillik xizmat haqi va bonuslar tarifga bog‘liq; aniq qiymat tarifdan tekshiriladi.",
+        "Mijozning aylanmasi va segmenti mosligini baholash muhim."
+      ],
+      "keywords": ["premium", "премиум", "lounge", "konsyerj", "concierge"]
+    },
+    {
+      "id": "cashback_card",
+      "name": "Keshbek karta",
+      "category": "karta",
+      "languages": ["uz", "ru"],
+      "facts": [
+        "Keshbek foizi va toifalar (APTEKA, AVTYOQIL, restoran va hokazo) tarif va aksiya bo‘yicha farq qiladi.",
+        "Keshbek limitlari va hisoblash qoidalari shartnomada ko‘rsatiladi.",
+        "Aniq foiz va toifalar uchun joriy tarif tekshiriladi."
+      ],
+      "keywords": ["keshbek", "cashback", "кэшбэк", "bonus", "kategoriya"]
+    },
+    {
+      "id": "mortgage",
+      "name": "Ipoteka",
+      "category": "kredit",
+      "languages": ["uz", "ru"],
+      "facts": [
+        "Ipoteka shartlari uy-joy bahosi, boshlang‘ich to‘lov, daromad va skoringga bog‘liq.",
+        "Boshlang‘ich to‘lov ulushi va sug‘urta talablari mahsulotga qarab farq qilishi mumkin.",
+        "Aniq stavka/limit faqat to‘liq tekshiruvdan keyin; va’da berilmaydi."
+      ],
+      "keywords": ["ipoteka", "ипотека", "uy", "boshlang‘ich", "первоначальный", "ипотек"]
+    },
+    {
+      "id": "auto_credit",
+      "name": "Avtokredit",
+      "category": "kredit",
+      "languages": ["uz", "ru"],
+      "facts": [
+        "Avtokreditda transport vositasi garov yoki boshqa ta’minot shakllari bo‘lishi mumkin.",
+        "KASKO va sug‘urta talablari bank siyosatiga bog‘liq.",
+        "Stavka va muddat mijoz profili va avto turiga qarab aniqlanadi."
+      ],
+      "keywords": ["avto", "avtokredit", "машина", "автокредит", "garov avto"]
+    },
+    {
+      "id": "sme_credit",
+      "name": "Biznes / aylanma krediti",
+      "category": "kredit",
+      "languages": ["uz", "ru"],
+      "facts": [
+        "Tadbirkorlik krediti uchun moliya hisoboti, aylanma va garov/kafillik hujjatlari talab qilinishi mumkin.",
+        "Limit biznes riski va DSCR kabi ko‘rsatkichlarga bog‘liq.",
+        "Aniq shartlar kredit komitetidan keyin tasdiqlanadi."
+      ],
+      "keywords": ["biznes", "sme", "aylanma", "оборот", "предприниматель", "garov"]
+    },
+    {
+      "id": "mobile_banking",
+      "name": "SQB Mobile / onlayn xizmatlar",
+      "category": "digital",
+      "languages": ["uz", "ru"],
+      "facts": [
+        "Parol tiklash va kirish bloklari odatda ilovadagi “Parolni unutdingizmi” yoki call-center identifikatsiya protokoli orqali hal qilinadi.",
+        "Biometriya va OTP xavfsizlik choralari mijozga tushuntiriladi.",
+        "Aniq tugmalar/ekranlar versiyaga bog‘liq — operator umumiy xavfsiz yo‘riqnoma beradi."
+      ],
+      "keywords": ["ilova", "mobile", "parol", "пароль", "sqb", "onlayn bank", "blok"]
+    },
+    {
+      "id": "currency_exchange",
+      "name": "Valyuta ayirboshlash",
+      "category": "valyuta",
+      "languages": ["uz", "ru"],
+      "facts": [
+        "Ayirboshlash kursi va spread bankning joriy kurs jadvaliga bog‘liq.",
+        "Naqd yoki kartadan operatsiya kanaliga qarab cheklovlar bo‘lishi mumkin.",
+        "Aniq kurs va limitlar filial/kassa vaqtida tekshiriladi."
+      ],
+      "keywords": ["valyuta", "dollar", "eur", "rub", "kurs", "обмен", "конвертац", "валют"]
+    }
+  ]
+}
+
